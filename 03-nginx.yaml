@@ -1,0 +1,13 @@
+- name: install nginx and start nginx
+  hosts: frontend
+  become: yes
+  tasks:
+  - name: install nginx
+    anisble.bultin.package:
+      name: nginx
+      state: present
+
+  - name: start nginx
+    anisble.bultin.service:
+      name: nginx
+      state: started

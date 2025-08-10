@@ -4,7 +4,7 @@
   vars:
     GREETING: Hello-from-vars
   vars_files:
-  - course.yaml 
+  # - course.yaml 
   vars_prompt:
     - name: GREETING
       prompt: Please enter greetings from prompt

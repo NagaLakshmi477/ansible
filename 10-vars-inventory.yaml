@@ -1,0 +1,7 @@
+- name: print the variables from inventory
+  hosts: frontend
+  become: yes
+  tasks:
+  - name: print the variables from inventory
+    ansible.builtin.debug:
+      msg: " name is {{ NAME }} and age is {{ AGE }}"

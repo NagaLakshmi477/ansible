@@ -1,0 +1,7 @@
+- name: Hello world
+  hosts: local
+  conection: local
+  tasks:
+  - name: print the hello world
+    ansible.builtin.debug:
+      msg: " Hello DevOps With AWS"

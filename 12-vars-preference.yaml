@@ -6,9 +6,9 @@
   vars_files:
   # - course.yaml 
   vars_prompt:
-    - name: GREETING
-      prompt: Please enter greetings from prompt
-      private: false
+    # - name: GREETING
+    #   prompt: Please enter greetings from prompt
+    #   private: false
   tasks:
   - name: varibales from the tasks
     # vars:

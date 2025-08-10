@@ -1,0 +1,20 @@
+- name: task level vars
+  hosts: local
+  connection: local
+  vars:
+    NAME: lakshmi
+    AGE: 26
+  tasks:
+  - name: task level var
+    vars:
+      NAME: reddy
+      AGE: 27
+    ansible.builtin.debug:
+      msg: " My name is {{ NAME }} and my age is {{ AGE }}"
+
+
+  - name: task level var
+    ansible.builtin.debug:
+      msg: " My name is {{ NAME }} and my age is {{ AGE }}"
+
+  

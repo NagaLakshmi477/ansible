@@ -11,3 +11,14 @@
   - name: print the persons names
     ansible.builtin.debug:
       msg: " names are {{ persons }}"
+
+  - name: print the names into upper case
+    ansible.builtin.debug:
+      msg: " names are in upper casese {{ persons | upper }}"
+
+  - name: print the names into upper case
+    ansible.builtin.debug:
+      msg: " names are in upper casese {{ persons | lower }}"
+  - name: split the names  
+    ansible.builtin.debug:
+      msg: " split the names  {{ persons | split(',') }}"

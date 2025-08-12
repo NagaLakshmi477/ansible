@@ -5,6 +5,6 @@
     NUM: 30
   tasks:
   - name: print the number is greather than 30
-    when: $NUM > 70
+    when: NUM > 70
     ansible.builtin.debug:
       msg: " number is {{ NUM  }} is greather than 30"

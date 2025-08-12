@@ -7,3 +7,7 @@
   - name: print the person name
     ansible.builtin.debug:
       msg: " {{ person | default('lakshmi') }}"
+  
+  - name: print the persons names
+    ansible.builtin.debug:
+      msg: " names are {{ persons }}"

@@ -37,7 +37,9 @@
 
   - name: convert  list to map
     vars:
-      name: ansible
-      tool: cicd
+      COURSE:
+        - {'key': 'name', 'value': 'ansible'}
+        - {'key': 'duration', 'value': '10HR'}
+        - {'key': 'trainer', 'value': 'sivakumar'}
     ansible.builtin.debug:
       msg: "{{ COURSE | items2dict }}"

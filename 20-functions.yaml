@@ -26,3 +26,18 @@
   - name: split the names  
     ansible.builtin.debug:
       msg: " split the names  {{ persons | split(',') }}"
+    
+  - name: convert map to list
+    vars:
+      COURSE:
+        name: jenkins
+        tool: cicd
+    ansible.builtin.debug:
+      msg: {{ COURSE | dict2items }}
+
+  - name: convert  list to map
+    vars:
+      name: ansible
+      tool: cicd
+    ansible.builtin.debug:
+      msg: {{ COURSE | items2dict }}

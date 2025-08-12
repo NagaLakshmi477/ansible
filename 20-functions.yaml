@@ -6,7 +6,7 @@
   tasks:
   - name: print the person name
     ansible.builtin.debug:
-      msg: " {{ person | default('lakshmi') }}"
+      msg: " {{ person | default('Lakshmi') }}"
   
   - name: print the persons names
     ansible.builtin.debug:
@@ -14,11 +14,11 @@
 
   - name: print the names into upper case
     ansible.builtin.debug:
-      msg: " names are in upper casese {{ persons | upper }}"
+      msg: " names are in upper casese {{ person | upper }}"
 
   - name: print the names into upper case
     ansible.builtin.debug:
-      msg: " names are in upper casese {{ persons | lower }}"
+      msg: " names are in upper casese {{ person | lower }}"
   - name: split the names  
     ansible.builtin.debug:
       msg: " split the names  {{ persons | split(',') }}"

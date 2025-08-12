@@ -1,0 +1,19 @@
+- name: data types
+  hosts: local
+  connection: local
+  vars:
+    USERNAME: lakshmi
+    AGE: 26
+    IS_TRUE: true
+    TOOLS:
+    - linux
+    - shell
+    - ansible
+    CONCEPTS:
+      cicd: jenkins
+      linux: shell
+      devops: aws
+  tasks:
+  - name: data types in ansible
+    ansible.builtin.debug:
+      msg: "username: {{ USERNAME }}, age {{ AGE }}, iss true {{ IS_TRUE }}, tools {{ TOOLS }}, concepts {{ CONCEPTS }}"

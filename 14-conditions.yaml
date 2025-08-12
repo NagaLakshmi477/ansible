@@ -1,0 +1,10 @@
+- name: conditions in ansible
+  hosts: local
+  connection: local
+  vars:
+    NUM: 30
+  tasks:
+  - name: print the number is greather than 30
+    when: $NUM > 70
+    ansible.builtin.debug:
+      msg: " number is {{ NUM  }} is greather than 30"

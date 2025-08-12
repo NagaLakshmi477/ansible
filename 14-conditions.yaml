@@ -7,9 +7,9 @@
   - name: print the number is greather than 30
     when: NUM > 70
     ansible.builtin.debug:
-      msg: " number is {{ NUM  }} is greather than 30"
+      msg: " number is {{ NUM  }} is greather than 70"
 
   - name: print the number is less than 30
     when: NUM < 70
     ansible.builtin.debug:
-      msg: " number is {{ NUM  }} is less than 30"
+      msg: " number is {{ NUM  }} is less than 70"

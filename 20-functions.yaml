@@ -6,4 +6,4 @@
   tasks:
   - name: print the person name
     ansible.builtin.debug:
-      msg: " {{ person  }}"
+      msg: " {{ person | default('lakshmi') }}"

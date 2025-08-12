@@ -1,0 +1,9 @@
+- name: functions
+  hosts: local
+  connection: local
+  vars:
+    persons: "ramesh,suresh,mahesh"
+  tasks:
+  - name: print the person name
+    ansible.builtin.debug:
+      msg: " {{ person  }}"

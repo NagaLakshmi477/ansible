@@ -13,10 +13,14 @@
       msg: " names are {{ persons }}"
 
   - name: print the names into upper case
+    vars:
+      person: Lakshmi
     ansible.builtin.debug:
       msg: " names are in upper casese {{ person | upper }}"
 
   - name: print the names into upper case
+    vars:
+      person: Lakshmi
     ansible.builtin.debug:
       msg: " names are in upper casese {{ person | lower }}"
   - name: split the names  

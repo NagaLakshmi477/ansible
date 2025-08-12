@@ -4,8 +4,8 @@
   tasks: 
   - name: install packages
     ansible.builin.dnf:
-      name: "{{ item }}"
-      state: present
+      - name: "{{ item }}"
+        state: present
     loop:
     - nginx
     - zip

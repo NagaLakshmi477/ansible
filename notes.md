@@ -184,3 +184,21 @@ int,float,double,string,bool,list,map......
 
 ## conditions
 
+
+module:
+========
+A module is a small tool that ansible uses to do spefic task (install,copy, run commands)
+we have 2 modules
+1. shell
+2. command
+
+Command:
+=========
+Runs command directly on system
+Doesn't use shell
+Cannot use things like |, > , Environment variables ($Home)
+
+Shell:
+=======
+Runs a command throught a shell
+can use shell features |, > >> , varibales, operators

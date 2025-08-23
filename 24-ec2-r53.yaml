@@ -1,0 +1,24 @@
+- name: create ec2 and r53 records
+  connection: local
+  hosts: local
+  vars:
+    instances:
+    - mysql
+    - backend
+    - frontend
+    subnet_id: subnet_098797675645
+    sg_id: sg-0962345677889
+  tasks:
+  - name: create ec2 instance
+    amazon.aws.ec2_instance:
+      name: "{{ item }}"
+      vpc_subnet_id: "{{ subnet_id }}"
+      instance_type: t3.micro
+      image_id: ami-09huihij70
+      tags:
+        Name: "{{ item }}"
+    loop: {{ instance }}
+    register: ec2_output
+  - name: print the ec2 ec2_output
+    ansible_builtin.debug:
+      msg: "{{ ec2_output }}"

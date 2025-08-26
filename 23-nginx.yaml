@@ -1,15 +1,13 @@
-- tag:Name: install nginx
-  hosts: aws_frontend
-  #serial: 4
+- name: install nginx using ansible facts
+  hosts: frontend
   become: yes
   tasks:
-  - name: install nginx
+  - name: install nginx using dnf
     ansible.builtin.dnf:
       name: nginx
       state: present
-
-  - name: run and enable nginx
+  - name: Run and enable nginx
     ansible.builtin.service:
-      name: nginx
-      state: started
-      enabled: yes
+        name: nginx
+        state: started
+        enabled: yes

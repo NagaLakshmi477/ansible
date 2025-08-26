@@ -1,16 +1,18 @@
 plugin: amazon.aws.aws_ec2
 regions:
-- us-east-1
-# here i want to fecth the all the frontend servers
+  - us-east-1
+
 keyed_groups:
-- key: tags.Names
-  prefix: "aws"
-  separator: "_"
+  - key: tags.Name
+    prefix: aws
+    separator: "_"
+
 filters:
   tag:Name: frontend
-  instance.state.name: running
-hostsnames:
-  - private_ip_address
+  instance-state-name: running   # correct key, not "instance.state.name"
+
+hostnames:
+  - private-ip-address            # correct spelling, use dashes not underscores
 
 compose:
-  ansible_host: private_ip_address
+  ansible_host: private-ip-address

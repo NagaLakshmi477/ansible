@@ -1,5 +1,5 @@
 - name: install nginx using ansible facts
-  hosts: aws_frontend
+  hosts: dynamic-frontend
   become: yes
   tasks:
   - name: install nginx using dnf

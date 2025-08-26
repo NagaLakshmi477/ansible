@@ -1,13 +1,14 @@
 - name: install nginx using ansible facts
-  hosts: dynamic-frontend
+  hosts: dynamic_frontend
   become: yes
   tasks:
-  - name: install nginx using dnf
-    ansible.builtin.dnf:
-      name: nginx
-      state: present
-  - name: Run and enable nginx
-    ansible.builtin.service:
+    - name: install nginx using dnf
+      ansible.builtin.dnf:
+        name: nginx
+        state: present
+
+    - name: Run and enable nginx
+      ansible.builtin.service:
         name: nginx
         state: started
         enabled: yes

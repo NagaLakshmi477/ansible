@@ -1,18 +1,16 @@
 plugin: amazon.aws.aws_ec2
 regions:
-  - us-east-1
-
+- us-east-1
 keyed_groups:
-  - key: tags.Name
-    prefix: aws
-    separator: "_"
-
+- key: tags.Name #dynamic-frontend
+  prefix: "dynamic"
+  separator: "_"
 filters:
   tag:Name: frontend
-  instance-state-name: running   # correct key, not "instance.state.name"
-
+  instance-state-name : running
 hostnames:
-  - private-ip-address            # correct spelling, use dashes not underscores
-
+  # You can also specify a list in order of precedence for hostname variables.
+  - private-ip-address
 compose:
-  ansible_host: private-ip-address
+  # This sets the `ansible_host` variable to connect with the private IP address without changing the hostname.
+  ansible_host: private_ip_address

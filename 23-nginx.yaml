@@ -1,6 +1,7 @@
 - name: install nginx using ansible facts
   hosts: dynamic_frontend
   become: yes
+  serial: 2
   tasks:
     - name: install nginx using dnf
       ansible.builtin.dnf:

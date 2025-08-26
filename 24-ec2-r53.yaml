@@ -9,15 +9,15 @@
     subnet_id: subnet-0ac856ba4ad9d5d06
     sg_id: sg-0033ecf0c0f6062e4
   tasks:
-  - name: create ec2 instance
-    amazon.aws.ec2_instance:
+  - name: create ec2 instances
+    amazon.aws.ec2_instances:
       name: "{{ item }}"
       vpc_subnet_id: "{{ subnet_id }}"
       instance_type: t3.micro
       image_id: ami-09c813fb71547fc4f
       tags:
         Name: "{{ item }}"
-    loop: "{{ instance }}"
+    loop: "{{ instances }}"
     register: ec2_output
   - name: print the ec2 ec2_output
     ansible.builtin.debug:

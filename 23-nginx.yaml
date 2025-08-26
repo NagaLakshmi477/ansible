@@ -1,6 +1,6 @@
 - tag:Name: install nginx
   hosts: aws_frontend
-  serial: 4
+  #serial: 4
   become: yes
   tasks:
   - name: install nginx

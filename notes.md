@@ -33,15 +33,19 @@ If you run the same command multiple times,
 
 # Configuration Management
 
-Configuration Management is the process of provisioning and configuring servers for application hosting. It involves:
+Configuration Management is the process of **setting up and managing servers automatically**.  
+It means we can run our applications without having to manually set up everything ourselves.
 
-- Installing required packages
-- Setting up programming languages
-- Creating folders and users
-- Downloading the code
-- Installing dependencies
-- Creating systemd/systemctl services
-- Starting the service/server
+It usually involves:
+
+- Installing required packages  
+- Setting up programming languages  
+- Creating folders and users  
+- Downloading the code  
+- Installing dependencies  
+- Creating `systemd` / `systemctl` services  
+- Starting the service or server
+
 
 ### Flow:
 
@@ -213,4 +217,5 @@ Shell:
 Runs a command throught a shell
 
 can use shell features |, > >> , varibales, operators
+
 

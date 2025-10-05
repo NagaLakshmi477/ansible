@@ -49,8 +49,8 @@ It usually involves:
 
 ### Flow:
 
-1. Provision server
-2. Configure (as described above)
+1. Provision server: This just means getting a new server ready to use
+2. Configure server: Set up the server so it can run your app.
 3. Deploy application:
    - Remove old versions
    - Download new version
@@ -217,5 +217,6 @@ Shell:
 Runs a command throught a shell
 
 can use shell features |, > >> , varibales, operators
+
 
 

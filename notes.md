@@ -80,7 +80,7 @@ Control Server  --->  CM Server (Stores Configurations / Playbooks)
 ```
 # Architecture Overview
 
-** 1. Control Server (e.g., GitHub**)
+## 1. Control Server (e.g., GitHub)
 - Acts as the **source of truth** for all Ansible files (playbooks, roles, inventories).
 
 ## 2. CM Server (Configuration Management Server)

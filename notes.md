@@ -68,7 +68,8 @@ It usually involves:
 
 ### Architecture:
 
-```Control Server  --->  CM Server (Stores Configurations / Playbooks)
+```
+Control Server  --->  CM Server (Stores Configurations / Playbooks)
                            ^
                            |
                      -----------------

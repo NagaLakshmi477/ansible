@@ -170,7 +170,7 @@ General structure:
 ## Check Connection to Node
 
 ```bash
-ansible all -i  <privare_io>, -e ansible_user=ec2-user -e ansible_password=DevOps321 -m ping
+ansible all -i  <node_privare_ip>, -e ansible_user=ec2-user -e ansible_password=DevOps321 -m ping
 ```
 
 ---
@@ -238,6 +238,7 @@ Shell:
 Runs a command throught a shell
 
 can use shell features |, > >> , varibales, operators
+
 
 
 

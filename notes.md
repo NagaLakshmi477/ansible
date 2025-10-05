@@ -78,6 +78,21 @@ Control Server  --->  CM Server (Stores Configurations / Playbooks)
                   (Agent)(Agent) (Agent)
 
 ```
+# Architecture Overview
+
+## 1. Control Server (e.g., GitHub)
+- Acts as the **source of truth** for all Ansible files (playbooks, roles, inventories).
+
+
+## 2. CM Server (Configuration Management Server)
+- Acts as an **intermediary repository** between the Control Server and the nodes.
+- **Gets the updated files from the Control Server** (e.g., GitHub).
+- Nodes **fetch the configuration files** from the CM Server.
+
+## 3. Nodes (Agents)
+- Each node has an **agent installed**.
+- The agent **polls the CM Server every 30 minutes**.
+- If updates are found, the agent **downloads and executes the new configurations**.
 
 ### Disadvantages:
 
@@ -222,6 +237,7 @@ Shell:
 Runs a command throught a shell
 
 can use shell features |, > >> , varibales, operators
+
 
 
 

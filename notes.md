@@ -93,9 +93,6 @@ Control Server  --->  CM Server (Stores Configurations / Playbooks)
 - Agent **polls the CM Server every 30 minutes**.
 - Downloads and executes updates if found.
 
-### Disadvantages
-- Polling causes unnecessary traffic and resource usage.
-- Requires agent software and communication protocols.
 
 
 ### Disadvantages:
@@ -241,6 +238,7 @@ Shell:
 Runs a command throught a shell
 
 can use shell features |, > >> , varibales, operators
+
 
 
 

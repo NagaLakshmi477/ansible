@@ -68,10 +68,14 @@ It usually involves:
 
 ### Architecture:
 
-```plaintext
-Control Server ----> CM Server (Configurations) <----- Node 1 (Agent)
-                                                        Node 2 (Agent)
-                                                        Node 3 (Agent)
+```Control Server  --->  CM Server (Stores Configurations / Playbooks)
+                           ^
+                           |
+                     -----------------
+                     |       |       |
+                  Node 1  Node 2  Node 3
+                  (Agent)(Agent) (Agent)
+
 ```
 
 ### Disadvantages:
@@ -217,6 +221,7 @@ Shell:
 Runs a command throught a shell
 
 can use shell features |, > >> , varibales, operators
+
 
 
 

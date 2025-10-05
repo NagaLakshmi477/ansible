@@ -12,20 +12,23 @@ sh <filename.sh>       # Executes using 'sh' shell
 
 ## Disadvantages of Shell Scripting
 
-- No proper error handling : If something goes wrong, it doesn’t clearly tell you what happened or why
-- Difficult to manage across multiple servers (not scalable) : It works fine on one or two machines, but when you have 10, 100, or 1000 servers, it becomes diffcult
-- Assumes a homogeneous environment
-- Syntax is sometimes hard to understand
-- Password security is not built-in
-- Scripts are not idempotent (re-running may cause issues)
-**💡 Idempotent**
+- No proper error handling : If something goes wrong, it doesn’t clearly tell you what happened or why  
+- Difficult to manage across multiple servers (not scalable) : It works fine on one or two machines, but when you have 10, 100, or 1000 servers, it becomes diffcult  
+- Assumes a homogeneous environment  
+- Syntax is sometimes hard to understand  
+- Password security is not built-in  
+- Scripts are not idempotent (re-running may cause issues)  
 
-If you run the same command, action, or script many times,
-➡️ the final result stays the same every time.
-**⚠️ Not Idempotent**
+**💡 Idempotent**  
 
-If you run the same command multiple times,
+If you run the same command, action, or script many times,  
+➡️ the final result stays the same every time.  
+
+**⚠️ Not Idempotent**  
+
+If you run the same command multiple times,  
 ➡️ the result keeps changing — it might add duplicates, throw errors, or mess things up.
+
 ---
 
 # Configuration Management
@@ -210,3 +213,4 @@ Shell:
 Runs a command throught a shell
 
 can use shell features |, > >> , varibales, operators
+

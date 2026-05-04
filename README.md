@@ -12,31 +12,45 @@ sh <filename.sh>       # Executes using 'sh' shell
 
 ## Disadvantages of Shell Scripting
 
-- No proper error handling
-- Difficult to manage across multiple servers (not scalable)
-- Assumes a homogeneous environment
-- Syntax is sometimes hard to understand
-- Password security is not built-in
-- Scripts are not idempotent (re-running may cause issues)
+- No proper error handling : If something goes wrong, it doesn’t clearly tell you what happened or why  
+- Difficult to manage across multiple servers (not scalable) : It works fine on one or two machines, but when you have 10, 100, or 1000 servers, it becomes diffcult  
+- Assumes a homogeneous environment  
+- Syntax is sometimes hard to understand  
+- Password security is not built-in  
+- Scripts are not idempotent (re-running may cause issues)  
+
+**💡 Idempotent**  
+
+If you run the same command, action, or script many times,  
+➡️ the final result stays the same every time.  
+
+**⚠️ Not Idempotent**  
+
+If you run the same command multiple times,  
+➡️ the result keeps changing — it might add duplicates, throw errors, or mess things up.
 
 ---
 
 # Configuration Management
 
-Configuration Management is the process of provisioning and configuring servers for application hosting. It involves:
+Configuration Management is the process of **setting up and managing servers automatically**.  
+It means we can run our applications without having to manually set up everything ourselves.
 
-- Installing required packages
-- Setting up programming languages
-- Creating folders and users
-- Downloading the code
-- Installing dependencies
-- Creating systemd/systemctl services
-- Starting the service/server
+It usually involves:
+
+- Installing required packages  
+- Setting up programming languages  
+- Creating folders and users  
+- Downloading the code  
+- Installing dependencies  
+- Creating `systemd` / `systemctl` services  
+- Starting the service or server
+
 
 ### Flow:
 
-1. Provision server
-2. Configure (as described above)
+1. Provision server: This just means getting a new server ready to use
+2. Configure server: Set up the server so it can run your app.
 3. Deploy application:
    - Remove old versions
    - Download new version
@@ -54,11 +68,32 @@ Configuration Management is the process of provisioning and configuring servers 
 
 ### Architecture:
 
-```plaintext
-Control Server ----> CM Server (Configurations) <----- Node 1 (Agent)
-                                                        Node 2 (Agent)
-                                                        Node 3 (Agent)
 ```
+Control Server  --->  CM Server (Stores Configurations / Playbooks)
+                           ^
+                           |
+                     -----------------
+                     |       |       |
+                  Node 1  Node 2  Node 3
+                  (Agent)(Agent) (Agent)
+
+```
+# Architecture Overview
+
+## 1. Control Server (e.g., GitHub)
+- Acts as the **source of truth** for all Ansible files (playbooks, roles, inventories).
+
+## 2. CM Server (Configuration Management Server)
+- Intermediary repository between Control Server and nodes.
+- **Gets updated files from the Control Server** (e.g., GitHub).
+- Nodes **fetch configuration files** from the CM Server.
+
+## 3. Nodes (Agents)
+- Each node has an **agent installed**.
+- Agent **polls the CM Server every 30 minutes**.
+- Downloads and executes updates if found.
+
+
 
 ### Disadvantages:
 
@@ -135,7 +170,7 @@ General structure:
 ## Check Connection to Node
 
 ```bash
-ansible all -i  <privare_io>, -e ansible_user=ec2-user -e ansible_password=DevOps321 -m ping
+ansible all -i  <node_privare_ip>, -e ansible_user=ec2-user -e ansible_password=DevOps321 -m ping
 ```
 
 ---
@@ -183,4 +218,33 @@ variable holds the values we can use whever we want if we change one place it wi
 int,float,double,string,bool,list,map......
 
 ## conditions
+
+
+module:
+========
+A module is a small tool that ansible uses to do spefic task (install,copy, run commands)
+we have 2 modules
+1. shell
+2. command
+
+Command:
+=========
+Runs command directly on system
+Doesn't use shell
+Cannot use things like |, > , Environment variables ($Home)
+
+Shell:
+=======
+Runs a command throught a shell
+
+can use shell features |, > >> , varibales, operators
+
+
+
+
+
+
+
+
+
 

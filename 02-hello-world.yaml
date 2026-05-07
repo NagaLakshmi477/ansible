@@ -3,4 +3,4 @@
   tasks:
   - name: printing the hello world
     ansible.builtin.debug:
-    msg: hellow ansible playbook
+      msg: hellow ansible playbook

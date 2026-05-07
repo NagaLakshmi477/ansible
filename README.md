@@ -130,6 +130,13 @@ Ansible Server (Config) ----SSH----> Node 1
 
 # Ansible Remote Login and Basic Usage
 
+server 1:
+
+ssh ec2-user@<server2 Ip>
+ssh ec2-user@54.85.119.91 'echo "Hello Ansible " >/tmp/ansible.txt'
+We can see the file in server2
+
+
 ## Overview
 
 Ansible allows remote login to another server from a control server (e.g., server1 to server2) using SSH. This method allows operations to be performed on remote nodes from the control machine.

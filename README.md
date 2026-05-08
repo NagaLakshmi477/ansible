@@ -231,6 +231,10 @@ when: <condition>
 
 refer session 24---> notes
 
+loops:
+
+item is reserved keyword
+
 
 module:
 ========

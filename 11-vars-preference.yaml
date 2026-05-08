@@ -1,8 +1,8 @@
 - name: variable preferences from playbook
   hosts: local
   connection: local
-  vars:
-    GREETING: "Hello from Play"
+  # vars:
+  #   GREETING: "Hello from Play"
   vars_files:
   - course.yaml
   vars_prompt:

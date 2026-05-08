@@ -1,0 +1,14 @@
+- name: conditions in ansible
+  hosts: local
+  connection: local
+  vars:
+    NUM: 108
+  tasks:
+  - name: print if the given number is greathan 100
+    ansible.builtin.debug:
+      msg: " given number is greathan 100"
+    when: NUM > 100
+  - name: print if the given number is lessthan 100
+    ansible.builtin.debug:
+      msg: " given number is lessthan 100"
+    when: NUM < 100

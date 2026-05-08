@@ -5,5 +5,5 @@
   - name: install nginx
     ansible.builtin.dnf:
       msg: install nginx
-    when: ansible_facts['os_family'] == "RedHat"
+    when: os_family == "RedHat"
   

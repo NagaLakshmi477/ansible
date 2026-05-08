@@ -2,11 +2,20 @@
   hosts: local
   connection: local
   become: yes
+  vars:
+      COURSE: AWS
+      TIME: 90hrs
+      TRAINER: Siva
   tasks:
   - name: printing task level variables
     vars:
       COURSE: DevOps
       TIME: 120hrs
       TRAINER: Siva
+    ansible.builtin.debug:
+      msg: " I am learning {{ COURSE }} for the duration of {{ TIME }} with trainer {{ TRAINER }} "
+
+  - name: printing task level variables
+    
     ansible.builtin.debug:
       msg: " I am learning {{ COURSE }} for the duration of {{ TIME }} with trainer {{ TRAINER }} "

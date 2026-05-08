@@ -6,7 +6,7 @@
   vars_files:
   - course.yaml
   vars_prompt:
-    - name: Greeting 
+    - name: GREETING 
       prompt: Enter the Greeting
       private: false
 

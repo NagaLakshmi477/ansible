@@ -8,8 +8,9 @@
       state: present
     loop:
       - nginx
-      - mysql
       - git
+      - python3
+
   - name: start all packages
     ansible.builtin.service:
       name: "{{ item }}"
@@ -17,4 +18,5 @@
       enabled: yes
     loop:
     - nginx
-    - mysqld
+    - python3
+  

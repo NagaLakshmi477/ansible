@@ -18,5 +18,5 @@
       enabled: yes
     loop:
     - nginx
-    - python3
+  
   

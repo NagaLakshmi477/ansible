@@ -219,7 +219,7 @@ variable holds the values we can use whever we want if we change one place it wi
 3. file
 4. prompt
 4. play
-6. inventory
+5. inventory
 
 ## data types
 int,float,double,string,bool,list,map......

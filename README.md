@@ -216,7 +216,7 @@ variable holds the values we can use whever we want if we change one place it wi
 1.arrguemnts/command line
 # ansible-playbook -i inventory.ini 12-vars-preference.yaml -e "GREETING=hellofromarrgs"
 2. task
-3. file
+2. file
 4. prompt
 5. play
 6. inventory

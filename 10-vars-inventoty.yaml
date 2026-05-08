@@ -1,8 +1,8 @@
-- name: variable from the inventory
-  hosts: frontend
-  become: yes
+- name: variable from inventory
+  hosts: local
+  connection: local
   tasks:
-  - name: variable from the inventory
+  - name: variables from inventory
     ansible.builtin.debug:
-      msg:  "this is the course name {{ COURSE }} and trainer name {{ TRAINER }} and 
+      msg: " this is the course name {{ COURSE }} and trainer name {{ TRAINER }} and 
               duration {{ TIME }}"

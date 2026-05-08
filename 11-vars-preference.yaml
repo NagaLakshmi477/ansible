@@ -12,7 +12,7 @@
 
   tasks:
   - name: print the Greeting
-    vars:
-      GREETING: "Hello from Task"
+    # vars:
+    #   GREETING: "Hello from Task"
     ansible.builtin.debug:
       msg: "print the {{ GREETING }} "

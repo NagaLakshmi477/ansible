@@ -226,6 +226,11 @@ int,float,double,string,bool,list,map......
 
 ## conditions
 
+using when condition 
+when: <condition>
+
+refer session 24---> notes
+
 
 module:
 ========

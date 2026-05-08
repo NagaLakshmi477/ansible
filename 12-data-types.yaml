@@ -1,0 +1,26 @@
+- name: ansible data types 
+  hosts: local
+  connection: local
+  vars:
+    time: 12hrs
+    course: devops
+    is_live: true
+    friuts:
+      - bananna
+      - mango
+      - pine apple
+      - apple
+    cost:
+      apple: 20
+      mango: 40
+      bananna: 10
+  tasks:
+  - name: printing data types
+    ansible.builtin.debug:
+      msg: " the time {{ time }} and course is {{ course }} and fruits are {{ friuts }} and cost is {{ cost }}"
+
+
+
+
+
+  

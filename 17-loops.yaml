@@ -10,3 +10,8 @@
       - nginx
       - mysql
       - git
+  - name: start all packages
+    ansible.builtin.service:
+      name: "{{ item }}"
+      state: started
+      enabled: yes

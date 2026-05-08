@@ -1,8 +1,8 @@
 - name: variable preferences from playbook
   hosts: local
   connection: local
-  # vars:
-  #   GREETING: "Hello from Play"
+  vars:
+    GREETING: "Hello from Play"
   vars_files:
   - course.yaml
   vars_prompt:
@@ -12,7 +12,7 @@
 
   tasks:
   - name: print the Greeting
-    # vars:
-    #   GREETING: "Hello from Task"
+    vars:
+      GREETING: "Hello from Task"
     ansible.builtin.debug:
       msg: "print the {{ GREETING }} "

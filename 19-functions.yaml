@@ -11,3 +11,12 @@
   - name: printing the person names
     ansible.builtin.debug:
       msg: " {{ persons | split(',')}}"
+
+  - name: convert dict to list
+    vars:
+      course:
+        title: devops
+        time: 180hr
+
+    ansible.builtin.debug:
+      msg: {{ course | dict2items}}

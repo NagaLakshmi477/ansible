@@ -9,4 +9,4 @@
     loop:
       - {name: 'nginx', state: present}
       - {name: 'git', state: absent}
-      - {name: 'python3', state: absent}
+  

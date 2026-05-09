@@ -31,7 +31,6 @@
 
   - name: convert lower case to upper case
     vars:
-      names:
-        - devops
+      name:"devops with aws"
     ansible.builtin.debug:
-      msg: {{ name | upper }}
+      msg: "{{ name | upper }}"

@@ -35,3 +35,10 @@
         - devops
     ansible.builtin.debug:
       msg: "{{ name | upper }}"
+
+  - name: convert upper case to lower case
+    vars:
+      name:
+        - devops
+    ansible.builtin.debug:
+      msg: "{{ name | lower }}"

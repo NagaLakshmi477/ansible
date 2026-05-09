@@ -1,0 +1,7 @@
+- name: functions in ansible
+  hosts: local
+  connection: local
+  tasks:
+  - name: printing the functions in ansible
+    ansible.builtin.debug:
+      msg: " my name is {{ person  }}"

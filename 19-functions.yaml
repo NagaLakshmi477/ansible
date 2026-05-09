@@ -24,7 +24,7 @@
   - name: convert list to dict
     vars:
       names:
-      - { 'key': 'ramesh', 'value': 'male' }
-      - { 'key': 'lakshmi', 'value': 'female' }
+        - { 'key':'ramesh', 'value':'male' }
+        - { 'key':'lakshmi', 'value':'female' }
     ansible.builtin.debug:
       msg: "{{ names | items2dict }}"

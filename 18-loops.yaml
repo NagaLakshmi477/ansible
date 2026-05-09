@@ -1,0 +1,12 @@
+- name: install multiple packages in ansible
+  hosts: frontend
+  become: yes
+  tasks:
+  - name: install all packages
+    ansible.builtin.package:
+      name: "{{ item }}"
+      state: present
+    loop:
+      - {name: 'nginx', state: present}
+      - {name: 'git', state: absent}
+      - {name: 'python3', state: absent}

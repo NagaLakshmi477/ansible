@@ -1,7 +1,13 @@
 - name: functions in ansible
   hosts: local
   connection: local
+  vars:
+    persons: "ramesh, suresh, madhu"
   tasks:
   - name: printing the functions in ansible
     ansible.builtin.debug:
       msg: " my name is {{ person | default('Nagalakshmi') }}"
+
+  - name: printing the person names
+    ansible.builtin.debug:
+      msg: " {{ persons }}"

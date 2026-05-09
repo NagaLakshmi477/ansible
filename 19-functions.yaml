@@ -28,3 +28,9 @@
         - { 'key':'lakshmi', 'value':'female' }
     ansible.builtin.debug:
       msg: "{{ names | items2dict }}"
+
+  - name: convert lower case to upper case
+    vars:
+      name:"devops with aws"
+    ansible.builtin.debug:
+      msg: {{ name | upper }}

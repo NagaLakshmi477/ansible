@@ -19,4 +19,4 @@
         time: 180hr
 
     ansible.builtin.debug:
-      msg: {{ course | dict2items}}
+      msg: "{{ course | dict2items}}"

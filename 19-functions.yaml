@@ -10,4 +10,4 @@
 
   - name: printing the person names
     ansible.builtin.debug:
-      msg: " {{ persons }}"
+      msg: " {{ persons | split(',')}}"

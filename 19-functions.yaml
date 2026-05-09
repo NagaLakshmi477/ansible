@@ -20,3 +20,12 @@
 
     ansible.builtin.debug:
       msg: "{{ course | dict2items}}"
+
+  - name: convert list to dict
+    vars:
+      names:
+        - ramesh
+        - lakshmi
+        - madhu 
+    ansible.builtin.debug:
+      msg: "{{ names | items2dict }}"

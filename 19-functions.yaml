@@ -24,8 +24,8 @@
   - name: convert list to dict
     vars:
       names:
-        - "{ 'name': 'ramesh', 'gender': 'male'}"
-        - "{ 'name': 'lakshmi', 'gender': 'female'}"
-        - "{ 'name': 'madhu', 'gender': 'male'}"
+        - { 'name': 'ramesh', 'gender': 'male'}
+        - { 'name': 'lakshmi', 'gender': 'female'}
+        - { 'name': 'madhu', 'gender': 'male'}
     ansible.builtin.debug:
       msg: "{{ names | items2dict }}"

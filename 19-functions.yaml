@@ -48,3 +48,6 @@
       ip: "152.59.202.39"
     ansible.builtin.debug:
       msg: "{{ ip | ansible.utils.ipaddr }}"
+
+
+# ansible-playbook -i inventory.ini 19-functions.yaml

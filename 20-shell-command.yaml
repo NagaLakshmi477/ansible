@@ -1,0 +1,12 @@
+- name: shell vs command line
+  hosts: frontend
+  become: yes
+  tasks:
+  - name: redirect ls output
+    ansible.builtin.shell: ls -ltr > /tmp/output.txt
+    # to store the o/p
+    register: output_file
+  - name: print the output
+    ansible.builtin.debug:
+      msg: "{{ output_file }}"
+

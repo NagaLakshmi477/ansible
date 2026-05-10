@@ -42,3 +42,9 @@
         - devops
     ansible.builtin.debug:
       msg: "{{ name | lower }}"
+
+  - name: check IP is vaild or not
+    vars:
+      ip:"123.09.00.00"
+    ansible.builtin.debug:
+      msg: "{{ ip | ansible.utils.ipaddr }}"

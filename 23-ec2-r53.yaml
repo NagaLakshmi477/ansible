@@ -18,5 +18,5 @@
       security_group: "{{ sg_id }}"
       image_id: "{{ image_id}}"
       tags:
-      Environment: "{{ item }}"
+        Environment: "{{ item }}"
     loop: "{{ instance }}"

@@ -17,7 +17,7 @@ filters:
 # What should appear as hostname in inventory output
 # Here private IP will be displayed
 hostnames:
-  - private_ip_address
+  - private-ip-address
 
 # Automatically create groups using EC2 tags
 keyed_groups:

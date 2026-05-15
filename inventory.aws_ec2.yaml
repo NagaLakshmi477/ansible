@@ -1,16 +1,40 @@
+# Use AWS EC2 dynamic inventory plugin
 plugin: amazon.aws.aws_ec2
-regions:
-- us-east-1
-filters:
-  tag:Name: frontend
-  instance-state-name: running
-hostnames:
-  - private-ip-address
-keyed_groups:
-- key: tags.Name
-  prefix:
-  separator: ""
-compose:
-  ansible_host: private_ip_address
 
-  #  ansible-inventory -i inventory.aws_ec2.yaml --graph
+# AWS region to search EC2 instances
+regions:
+  - us-east-1
+
+# Filter only running frontend servers
+filters:
+
+  # EC2 tag Name=frontend
+  tag:Name: frontend
+
+  # Only running instances
+  instance-state-name: running
+
+# What should appear as hostname in inventory output
+# Here private IP will be displayed
+hostnames:
+  - private_ip_address
+
+# Automatically create groups using EC2 tags
+keyed_groups:
+
+  # Create groups using Name tag
+  # Example:
+  # Name=frontend → group becomes @frontend
+  - key: tags.Name
+
+    # No prefix before group name
+    prefix: ""
+
+    # No separator
+    separator: ""
+
+# Which IP Ansible should use for SSH connection
+compose:
+
+  # Connect using private IP
+  ansible_host: private_ip_address

@@ -4,6 +4,9 @@
   vars:
     instance:
       - mysql
+      - mysqlll # it will create this as well 
+      # ansible cannot understand the state means it will create new instance
+      # it is poor in state
       - backend
       - frontend 
     subnet_id : subnet-0a48670d714d35284
@@ -20,3 +23,8 @@
       tags:
         Environment: "{{ item }}"
     loop: "{{ instance }}"
+    register: ec2_output
+
+  - name: print ec2 output 
+    ansible.builtin.debug:
+      name: "{{ ec2_output }}"

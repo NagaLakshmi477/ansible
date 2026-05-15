@@ -5,9 +5,9 @@
     - mysql
     - backend
     - frontend 
-    subnet_id : subnet-0a48670d714d35284
-    sg_id: sg-08e3733ce77305f2f
-    image_id: ami-0220d79f3f480ecf5
+    - subnet_id : subnet-0a48670d714d35284
+    - sg_id: sg-08e3733ce77305f2f
+    - image_id: ami-0220d79f3f480ecf5
   tasks:
   - name: create ec2 instance
     amazon.aws.ec2_instance:

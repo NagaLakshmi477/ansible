@@ -14,6 +14,6 @@
 
   - name:  user already exists
     ansible.builtin.command: sudo useradd roboshop
-    when: output.rc |int =-= 0 
+    when: output.rc == 0 
   
   

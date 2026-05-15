@@ -1,6 +1,7 @@
 - name: install nginx
   hosts: roboshop_frontend
   become: yes
+  serial: 2
   tasks:
   - name: install nginx
     ansible.builtin.dnf:
@@ -12,3 +13,4 @@
       name: nginx
       state: started
       enabled: yes
+#ansible-playbook -i inventory.aws_ec2.yaml -e ansible_user=ec2-use -e ansible_password=DevOps321 22-nginx.yaml

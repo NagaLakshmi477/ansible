@@ -13,7 +13,8 @@
     when: output.rc != 0 # it means abouve task is failure
 
   - name:  user already exists
-    ansible.builtin.command: sudo useradd roboshop
+    ansible.builtin.debug: 
+      msg: "user already exist"
     when: output.rc == 0 
   
   

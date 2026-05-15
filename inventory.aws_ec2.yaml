@@ -28,7 +28,7 @@ keyed_groups:
   - key: tags.Name
     #roboshop-frontend
     # No prefix before group name
-    prefix: "roboshop"
+    prefix: "roboshop_"
 
     # No separator
     separator: ""

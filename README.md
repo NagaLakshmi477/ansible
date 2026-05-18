@@ -109,6 +109,7 @@ Control Server  --->  CM Server (Stores Configurations / Playbooks)
 
 - Ansible Server contains both the configurations and acts as the control/master node.
 - Ansible uses **SSH protocol** to push configurations directly to nodes.
+- If any changes ansible will connect to the nodes and install the packages
 
 ### Architecture:
 

@@ -12,6 +12,7 @@
     subnet_id : subnet-0a48670d714d35284
     sg_id: sg-08e3733ce77305f2f
     image_id: ami-0220d79f3f480ecf5
+    zone: nagalakshmi.site
   tasks:
   - name: create ec2 instance
     amazon.aws.ec2_instance:
@@ -28,3 +29,15 @@
   - name: print ec2 output 
     ansible.builtin.debug:
       name: "{{ ec2_output }}"
+  
+  - name: create r53 instance
+    amazon.aws.route53:
+      state: present
+      zone: "{{ zone }}"
+      record: "{{ item.item }}.{{ zone }}"
+      type: A
+      ttl: 1
+      value: "{{ item.instances[0].private_ip_address }}"
+      overwrite: true
+      wait: true
+    loop: "{{ ec2_output.results }}"

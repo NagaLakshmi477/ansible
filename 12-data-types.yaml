@@ -5,12 +5,12 @@
     time: 12hrs
     course: devops
     is_live: true
-    friuts:
+    friuts: #list
       - bananna
       - mango
       - pine apple
       - apple
-    cost:
+    cost: #Dictionary
       apple: 20
       mango: 40
       bananna: 10

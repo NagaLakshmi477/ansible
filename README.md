@@ -208,19 +208,21 @@ ansible all -i ,PRVIATEIP>, -e ansible_user=ec2-user -e ansible_password=DevOps3
 - `-m` specifies the module (e.g., `ping`, `dnf`, `service`).
 - `-a` allows you to pass arguments to the module.
 
-## variables
+## Variables
 
-variable holds the values we can use whever we want if we change one place it will reflect to all places where you are reffreing
+A variable holds a value that can be used wherever needed.
+
+If you change the value in one place, it is automatically reflected everywhere the variable is referenced.
 
 ## variables prefrerences
 
 1.arrguemnts/command line
 # ansible-playbook -i inventory.ini 12-vars-preference.yaml -e "GREETING=hellofromarrgs"
-2. task
-3. file
-4. prompt
-4. play
-5. inventory
+2. Task Variables
+3. Variables from Variable Files (`vars_files`)
+4. Prompt Variables (`vars_prompt`)
+4. Play Variables (`vars` inside playbook)
+5. inventory Variables 
 
 ## data types
 int,float,double,string,bool,list,map......

@@ -271,44 +271,4 @@ Shell module: If your are using shell module your logging inside the server and 
 command module:
 executing command from ouside. you will not get any linux full environement redirections piping and variables will not work here
 
-Ansible Roles
-==================
 
-Role:
-roles is a proper directory structure to write ansible playbooks, we can re use roles.
-
-tasks/
--------
-Used to store all task files
-Main execution starts from tasks/main.yml.
-Additional task files can be included using include_tasks.
-
-common role:
-------------
-This is used for keep the all common tasks in files.
-
-files/
-Used to store static files that do not require modification 
-
-templates/
-Used to store dynamic files written in Jinja2 template format.
-we can keep some place holders we can put some values at runtime
-
-
-vars/
-Used to store variables used by the role.
-
-defaults/
-Used to define default variable values with the lowest priority.
-
-
-Dynamic Roles:
-Roles can be loaded dynamically using variables, allowing the same playbook to execute different roles based on runtime input.
-
-Main Advantages of Roles:
-- Reusability
-- Modular design
-- Easier maintenance
-- Standardized structure
-- Avoids duplicate code
-- Supports DRY principle (Don’t Repeat Yourself)
